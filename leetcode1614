@@ -1,0 +1,21 @@
+class Solution {
+    public int maxDepth(String s) {
+        // given a VPS s
+        // return the nesting depth of s
+        // the depth is the maximum number of nested parentheses
+        // ignore the rest, return the max depth
+        int big = 0, curr = 0;
+        
+        // iterate the chars in the string
+        for (int i = 0; i < s.length(); ++i) {
+            if (s.charAt(i) =='(') {
+                big = Math.max(big, ++curr);
+            }
+            if (s.charAt(i) == ')') {
+                curr--;
+            }
+        }
+        
+        return big;
+    }
+}
